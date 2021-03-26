@@ -1,4 +1,4 @@
-const formatMoney = (amount = 0) => {
+export const formatMoney = (amount = 0) => {
   const options = {
     style: 'currency',
     currency: 'USD',
@@ -14,4 +14,3 @@ const formatMoney = (amount = 0) => {
   return formatter.format(amount / 100);
 };
 
-export default formatMoney;
