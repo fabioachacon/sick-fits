@@ -5,6 +5,7 @@ import Title from './styles/Title';
 import PriceTag from './styles/PriceTag';
 import { formatMoney } from '../lib/formatMoney';
 import DeleteProduct from './DeleteProduct';
+import AddToCart from './AddToCart';
 
 const Product = ({ product }) => (
   <ItemStyles>
@@ -24,7 +25,9 @@ const Product = ({ product }) => (
         query: {
           id: product.id
         }
-      }}>Edit</Link>
+      }}>Edit
+      </Link>
+      <AddToCart id={product.id} />
       <DeleteProduct id={product.id}>Delete</DeleteProduct>
     </div>
   </ItemStyles>
