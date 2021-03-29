@@ -12,8 +12,6 @@ const CartItemStyles = styled.li`
     margin-right: 1rem;
     width: 100px;
   }
-
-  ,
   h3,
   p {
     margin: 0;
@@ -23,6 +21,7 @@ const CartItemStyles = styled.li`
 const CartItem = ({ cartItem }) => {
   const { product } = cartItem;
   console.log('product here', product);
+  console.log('cartItem', cartItem);
   return (
     <>
       <CartItemStyles>
@@ -36,7 +35,7 @@ const CartItem = ({ cartItem }) => {
             </em>
           </p>
         </div>
-        <RemoveFromCart id={product.id} />
+        <RemoveFromCart id={cartItem.id} />
       </CartItemStyles>
     </>
   );

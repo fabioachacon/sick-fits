@@ -7,7 +7,7 @@ const Dot = styled.div`
   border-radius: 50%;
   padding: 1rem;
   margin-left: 10px;
-  min-width: 2rem;
+  min-width: 3rem;
   font-feature-settings: 'tnum';
   font-variant-numeric: 'tabular-nums';
 `;

@@ -12,17 +12,21 @@ const BigButton = styled.button`
   }
 `;
 
+const update = (cache, payload) => {
+  cache.evict(cache.identify(payload.data.deleteCartItem));
+}
+
 const REMOVE_FROM_CART_MUTATION = gql`
   mutation REMOVE_FROM_CART_MUTATION($id: ID!) {
-    deleteCartItem(id: $id) {
-      id
-    }
+    deleteCartItem(id: $id) { id },
   }
 `;
 
 const RemoveFromCart = ({ id }) => {
+
   const [removeFromCart, { loading }] = useMutation(REMOVE_FROM_CART_MUTATION, {
     variables: { id },
+    update
   });
 
   return (
