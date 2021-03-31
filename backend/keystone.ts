@@ -7,7 +7,9 @@ import { config, createSchema } from '@keystone-next/keystone/schema';
 import { User } from './schemas/User';
 import { Product } from './schemas/Product';
 import { ProductImage } from './schemas/ProductImage';
+import { OrderItem } from './schemas/OrderItem';
 import { CartItem } from './schemas/CartItem';
+import { Order } from './schemas/Order';
 import 'dotenv/config';
 import { insertSeedData } from './seed-data';
 import { sendPassWordResetMail } from './lib/mail';
@@ -59,7 +61,9 @@ export default withAuth(
       User,
       Product,
       ProductImage,
-      CartItem
+      CartItem,
+      OrderItem,
+      Order
     }),
     extendGraphqlSchema,
     ui: {
